@@ -15,4 +15,10 @@ def health():
     return {
         "status": "healthy"
     }
-  
+
+
+@app.get("/predict")
+def predict():
+    return {
+        "message": "ASL prediction endpoint is ready"
+    }
