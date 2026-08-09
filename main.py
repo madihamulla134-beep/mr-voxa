@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, File, UploadFile
 
 app = FastAPI(title="MR Voxa API")
 
@@ -17,8 +17,9 @@ def health():
     }
 
 
-@app.get("/predict")
-def predict():
+@app.post("/predict")
+async def predict(file: UploadFile = File(...)):
     return {
-        "message": "ASL prediction endpoint is ready"
+        "message": "Image received successfully",
+        "filename": file.filename
     }
