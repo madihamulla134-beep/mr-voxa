@@ -7,7 +7,7 @@ import torch
 app = FastAPI(title="MR Voxa API")
 
 # ASL model location
-MODEL_PATH = "../asl_model"
+MODEL_PATH = "./asl_model"
 
 # Load model once when the backend starts
 processor = AutoImageProcessor.from_pretrained(MODEL_PATH)
